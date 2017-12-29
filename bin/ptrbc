@@ -1,0 +1,58 @@
+#! /usr/bin/perl 
+use strict;
+use warnings;
+
+our $VERSION='V0.1';
+
+use Carp; # Carp - alternative warn and die for modules
+use IO::File; # IO::File - supply object methods for filehandles
+use FileHandle; # FileHandle - supply object methods for filehandles
+use Getopt::Long; # Getopt::Long - Extended processing of command line options
+
+use Mapping;
+use Cleaning;
+#use ptrbc::Classification;
+#use ptrbc::Analysis;
+
+my $subCmd = shift;
+my %cmds = map { ($_, 1) } qw/ map clean classify analysis help/;
+unless (defined $subCmd) { die help_text();};
+unless (exists $cmds{$subCmd}){
+	warn 'Please give the valid sub command!', '\n';
+	die help_text();
+}
+SWITCH:{
+	$subCmd eq 'map'   && do { ADCT::Preprocess::Mapping->new();  last SWITCH; };
+	$subCmd eq 'clean' && do { ADCT::Main::DC::Cleaning->new();  last SWITCH; };
+	$subCmd eq 'classfy' && do { ADCT::Main::DC::Classification->new(); last SWITCH; };
+	$subCmd eq 'analysis'   && do { ADCT::Main::DC::Analysis->new();  last SWITCH; };
+}
+
+sub help_text{
+	return <<HELP
+Program: autodc - Automatic Data Cleaning Toolkit.
+Version: $VERSION
+ Author: Beifang Niu, Deqing Wang, Ruilin Li etc.
+
+Usage: autodc <command> [options]
+
+Key commands:
+
+map          -- Transform the raw data to identifiable format
+clean        -- Data cleaning and got clean data
+classify     -- Classify the clean data group by department
+analysis     -- Analysis clean data
+help         -- Show this message
+
+SUPPORT 
+For user support please mail lirl\@sccas.cn
+
+HELP
+}
+
+
+1;
+
+
+
+
