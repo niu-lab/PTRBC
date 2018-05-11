@@ -1,4 +1,4 @@
-package ptrbc::Mapping;
+package Mapping;
 
 use 5.006;
 use strict;
@@ -77,7 +77,7 @@ sub help_text{
         my $this = shift;
         return <<HELP
 
-Usage: autodc map [options]
+Usage: ptrbc map [options]
 
 --input_dir	Input raw or dictionary data file directory
 --dic		The dictionary file

@@ -1,4 +1,4 @@
-package ptrbc::Cleaning;
+package Cleaning;
 
 use 5.006;
 use strict;
@@ -173,7 +173,7 @@ sub help_text{
 	my $this = shift;
 	return <<HELP
 
-Usage: autodc clean [options]
+Usage: ptrbc clean [options]
 
 --input_dir	Input mapped or cleaning-rules data file directory	
 --mapped	The mapped file

@@ -9,10 +9,12 @@ use IO::File; # IO::File - supply object methods for filehandles
 use FileHandle; # FileHandle - supply object methods for filehandles
 use Getopt::Long; # Getopt::Long - Extended processing of command line options
 
-use Mapping;
-use Cleaning;
+#use Preprocess::Mapping;
+#use Preprocess::Cleaning;
 #use ptrbc::Classification;
 #use ptrbc::Analysis;
+use Mapping;
+use Cleaning;
 
 my $subCmd = shift;
 my %cmds = map { ($_, 1) } qw/ map clean classify analysis help/;
@@ -22,19 +24,19 @@ unless (exists $cmds{$subCmd}){
 	die help_text();
 }
 SWITCH:{
-	$subCmd eq 'map'   && do { ADCT::Preprocess::Mapping->new();  last SWITCH; };
-	$subCmd eq 'clean' && do { ADCT::Main::DC::Cleaning->new();  last SWITCH; };
-	$subCmd eq 'classfy' && do { ADCT::Main::DC::Classification->new(); last SWITCH; };
-	$subCmd eq 'analysis'   && do { ADCT::Main::DC::Analysis->new();  last SWITCH; };
+	$subCmd eq 'map'   && do { Mapping->new();  last SWITCH; };
+	$subCmd eq 'clean' && do { Cleaning->new();  last SWITCH; };
+	$subCmd eq 'classfy' && do { Classification->new(); last SWITCH; };
+	$subCmd eq 'analysis'   && do { Analysis->new();  last SWITCH; };
 }
 
 sub help_text{
 	return <<HELP
 Program: autodc - Automatic Data Cleaning Toolkit.
 Version: $VERSION
- Author: Beifang Niu, Deqing Wang, Ruilin Li etc.
+Authors: Beifang Niu, Deqing Wang, Ruilin Li etc.
 
-Usage: autodc <command> [options]
+Usage: ptrbc <command> [options]
 
 Key commands:
 
