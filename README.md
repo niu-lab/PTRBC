@@ -8,8 +8,10 @@ Usage
 
         Program:     PTRBC - Prediction of Transfusion with Red Blood Cell
 	
-	Version:     v1.0
-	
+        Version:     v1.0
+
+	Author: Beifang Niu, Ruilin Li, et al.
+
   Usage: ptrbc <command> [options]
 
 	Key commands:
