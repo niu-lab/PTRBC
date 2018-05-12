@@ -10,7 +10,7 @@ Usage
 	
         Version:     v1.0
 
-         Author: Beifang Niu, Ruilin Li, et al.
+         Author:     Beifang Niu, Ruilin Li, et al.
 
   Usage: ptrbc <command> [options]
 
@@ -39,7 +39,7 @@ To reinstall code of the same version (in some cases, may need --sudo):
 	cpanm --reinstall ptrbc-1.0.tar.gz
 
 
-Install (Linux)
+Install (In Linux system)
 -------
 
 The README is used to introduce the module and provide instructions on
