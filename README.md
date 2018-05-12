@@ -6,7 +6,7 @@ This clinical data analysis tool can be used to do data cleaning and predict the
 Usage
 -----
 
-        Program:     PTRBC - Prediction of Transfusion with Red Blood Cell
+        Program:     PTRBC - Prediction of Transfusion with Red Blood Cells
 	
         Version:     v1.0
 
