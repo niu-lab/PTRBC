@@ -10,7 +10,7 @@ Usage
 	
         Version:     v1.0
 
-	Author: Beifang Niu, Ruilin Li, et al.
+         Author: Beifang Niu, Ruilin Li, et al.
 
   Usage: ptrbc <command> [options]
 
