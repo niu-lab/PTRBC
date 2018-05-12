@@ -185,4 +185,4 @@ Usage: ptrbc clean [options]
 HELP
 
 }
-1; # End of ADCT::Main::DC::Cleaning
+1; # End of Cleaning

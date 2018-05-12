@@ -15,10 +15,9 @@ use Getopt::Long; # Getopt::Long - Extended processing of command line options
 #use ptrbc::Analysis;
 use Mapping;
 use Cleaning;
-use BP;
 
 my $subCmd = shift;
-my %cmds = map { ($_, 1) } qw/ map clean bp help/;
+my %cmds = map { ($_, 1) } qw/ map clean classify analysis help/;
 unless (defined $subCmd) { die help_text();};
 unless (exists $cmds{$subCmd}){
 	warn 'Please give the valid sub command!', '\n';
@@ -27,7 +26,7 @@ unless (exists $cmds{$subCmd}){
 SWITCH:{
 	$subCmd eq 'map'   && do { Mapping->new();  last SWITCH; };
 	$subCmd eq 'clean' && do { Cleaning->new();  last SWITCH; };
-	$subCmd eq 'bp' && do { BP->new();  last SWITCH; };
+	$subCmd eq 'bp' && do { Cleaning->new();  last SWITCH; };
 	#$subCmd eq 'classfy' && do { Classification->new(); last SWITCH; };
 	#$subCmd eq 'analysis'   && do { Analysis->new();  last SWITCH; };
 }
@@ -44,7 +43,8 @@ Key commands:
 
 map          -- Transform the raw data to identifiable format
 clean        -- Data cleaning and got clean data
-bp           -- Run bp method
+classify     -- Classify the clean data group by department
+analysis     -- Analysis clean data
 help         -- Show this message
 
 SUPPORT 

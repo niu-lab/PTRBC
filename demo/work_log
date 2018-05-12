@@ -1,0 +1,13 @@
+mkdir mllib # machine learning methods' files
+mkdir data # store the training data
+
+cp /home/sclirl/hospital_301/FINAL/1_words/7_RUN_ALL/Train_rbc.csv  ./data
+
+cp /home/sclirl/hospital_301/FINAL/1_words/7_RUN_ALL/Test_rbc.csv  ./data
+
+ptrbc bp --input_train_file data/method_bp_sample.data --input_test_file data/method_bp_sample.data --bp_size 12 --bp_matrix_size 10 --bp_decay 5e-6  --bp_range 0.1 --file_col 40 --bp_type class --output_file data/BP_pred_result.out
+
+
+
+
+

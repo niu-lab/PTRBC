@@ -1,0 +1,4 @@
+Rscript method_bp.R test.data test.data 12 10 5e-6 0.1 40 class BP_pred_result.csv
+
+perl -e 'system("Rscript method_bp.R test.data test.data 12 10 5e-6 0.1 40 class BP_pred_result.csv");'
+
