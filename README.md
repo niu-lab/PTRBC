@@ -7,7 +7,7 @@ Usage
 -----
 
         Program:     PTRBC - Prediction of Transfusion with Red Blood Cell
-
+	
 	Version:     v1.0
 	
   Usage: ptrbc <command> [options]
