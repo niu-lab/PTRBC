@@ -23,6 +23,7 @@ Usage
 		xgboost      -- Run XGBoost method
 		svm          -- Run Support Vector Machines(SVM) method
 		knn          -- Run k-NearestNeighbor(KNN) method
+		pred         -- Predict the required volume according to models
 		help         -- Show this message
 
 
@@ -55,6 +56,18 @@ fixes for the module are worth downloading.
 
 
 INSTALLATION
+
+    R Modules required
+    1. BP module
+       DMwR and dependencies: xts, quantmod, TTR, curl, abind, ROCR, gplots, gtools, gdata, caTools, bitops
+    2. RF module
+       randomForest
+    3. XGBoost module
+       xgboost  
+    4. SVM module
+       e1071
+    5. KNN module
+       gmodels, class
 
 To install this module, run the following commands:
 
