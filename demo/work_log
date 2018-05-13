@@ -7,7 +7,25 @@ cp /home/sclirl/hospital_301/FINAL/1_words/7_RUN_ALL/Test_rbc.csv  ./data
 
 ptrbc bp --input_train_file data/method_bp_sample.data --input_test_file data/method_bp_sample.data --bp_size 12 --bp_matrix_size 10 --bp_decay 5e-6  --bp_range 0.1 --file_col 40 --bp_type class --output_file data/BP_pred_result.out
 
+# local test for xgboost
+Rscript method_xgboost.R ../data/method_xgboost_sample.data 0.9 40 20 2 100 0.5 multi:softmax xgboost_pred_result.csv xgboost_label_numeric_result.csv xgboost_label_result.csv
+
+ptrbc xgboost --input_file data/method_xgboost_sample.data --pct 0.9 --file_col 40 --total_category 20 --xgboost_nthread 2 --xgboost_nrounds 100 --xgboost_subsample 0.5 --xgboost_objective multi:softmax --output_pred data/xgboost_pred_result.csv --output_label_numeric data/xgboost_label_numeric_result.csv --output_label data/xgboost_label_result.csv
+
+# local test for rf
+Rscript method_rf.R ../data/method_rf_sample.data 0.9 40 response 10 20 RF_pred_result.csv RF_label_result.csv RF_varPlot.pdf
 
 
+ptrbc rf --input_file data/method_rf_sample.data --pct 0.9 --file_col 40 --rf_type response --rf_step_size 10 --rf_max_trees 20 --output_pred data/RF_pred_result.csv --output_label data/RF_label_result.csv
+
+# local test for svm
+Rscript method_svm.R ../data/method_svm_sample.data 0.9 class ../data/SVM_pred_result.csv ../data/SVM_pred_result.csv
+
+ptrbc svm --input_file data/method_svm_sample.data --pct 0.9 --svm_type class --output_pred data/SVM_pred_result.csv --output_label data/SVM_pred_result.csv
+
+# local test for knn
+Rscript method_knn.R ../data/method_knn_sample.data 0.9 40 10 ../data/KNN_pred_result.csv ../data/KNN_label_result.csv
+
+ptrbc knn --input_file data/method_knn_sample.data --pct 0.9 --file_col 40 --knn_K 10 --output_pred data/KNN_pred_result.csv --output_label data/KNN_label_result.csv
 
 

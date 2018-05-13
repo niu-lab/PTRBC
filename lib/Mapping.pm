@@ -8,7 +8,7 @@ use Carp;
 use Getopt::Long;
 use IO::File;
 use FileHandle;
-our $VERSION = '0.01';
+our $VERSION = '1.0';
 
 sub new {
 	my $class = shift;

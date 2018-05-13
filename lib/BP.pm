@@ -8,7 +8,7 @@ use Carp;
 use Getopt::Long;
 use IO::File;
 use FileHandle;
-our $VERSION = '0.01';
+our $VERSION = '1.0';
 
 sub new {
 	my $class = shift;
@@ -65,7 +65,7 @@ Usage: ptrbc bp [options]
 --pct	                The percent of the training data in the input data, default=0.9
 --bp_size	        Bp_size, default=12
 --bp_matrix_size	Bp_matrix_size, default=100
---bp_decay              Bp_decay, default=5e-6
+--bp_decay              Bp_decay, default=0.01
 --bp_range              Bp_range, default=0.1
 --file_col              File_col
 --bp_type               Bp_type: include class or predict, default=class

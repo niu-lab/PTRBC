@@ -191,15 +191,27 @@ PERL_ARCHIVE_AFTER =
 
 TO_INST_PM = lib/BP.pm \
 	lib/Cleaning.pm \
+	lib/KNN.pm \
 	lib/Mapping.pm \
+	lib/RF.pm \
+	lib/SVM.pm \
+	lib/XGBoost.pm \
 	lib/ptrbc.pm
 
 PM_TO_BLIB = lib/BP.pm \
 	blib/lib/BP.pm \
 	lib/Cleaning.pm \
 	blib/lib/Cleaning.pm \
+	lib/KNN.pm \
+	blib/lib/KNN.pm \
 	lib/Mapping.pm \
 	blib/lib/Mapping.pm \
+	lib/RF.pm \
+	blib/lib/RF.pm \
+	lib/SVM.pm \
+	blib/lib/SVM.pm \
+	lib/XGBoost.pm \
+	blib/lib/XGBoost.pm \
 	lib/ptrbc.pm \
 	blib/lib/ptrbc.pm
 
@@ -874,7 +886,11 @@ pm_to_blib : $(FIRST_MAKEFILE) $(TO_INST_PM)
 	$(NOECHO) $(ABSPERLRUN) -MExtUtils::Install -e 'pm_to_blib({@ARGV}, '\''$(INST_LIB)/auto'\'', q[$(PM_FILTER)], '\''$(PERM_DIR)'\'')' -- \
 	  lib/BP.pm blib/lib/BP.pm \
 	  lib/Cleaning.pm blib/lib/Cleaning.pm \
+	  lib/KNN.pm blib/lib/KNN.pm \
 	  lib/Mapping.pm blib/lib/Mapping.pm \
+	  lib/RF.pm blib/lib/RF.pm \
+	  lib/SVM.pm blib/lib/SVM.pm \
+	  lib/XGBoost.pm blib/lib/XGBoost.pm \
 	  lib/ptrbc.pm blib/lib/ptrbc.pm 
 	$(NOECHO) $(TOUCH) pm_to_blib
 

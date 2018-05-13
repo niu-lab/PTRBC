@@ -6,10 +6,10 @@ Args<-commandArgs()
 #
 # BP input necessary parameters are
 # Args[6]:  parameter1=input_file
-# Args[7]:  parameter2=pct(default=0.7)
+# Args[7]:  parameter2=pct(default=0.9)
 # Args[8]:  parameter3=bp_size(default=12)
-# Args[9]:  parameter4=bp_matrix_size(defualt=2000)
-# Args[10]: parameter5=bp_decay(default=5e-6)
+# Args[9]:  parameter4=bp_matrix_size(defualt=100)
+# Args[10]: parameter5=bp_decay(default=0.01)
 # Args[11]: parameter6=bp_range(default=0.1)
 # Args[12]: parameter7=file_col(default=40, the cloumn number of the input file)
 # Args[13]: parameter8=bp_type(default="class")
@@ -72,7 +72,7 @@ cat("\nBP predicting...\n")
 pred_result=predict(nn, test, type=bp_type)
 
 
-cat("\nBP fusion matrix...\n")
+cat("\nBP fusion matrix:\n")
 #head(pred_result)
 table(pred_result,test$V1)
 out<-table(pred_result,test$V1)
