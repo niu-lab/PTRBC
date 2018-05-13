@@ -32,125 +32,109 @@ Examples
 
 1. ptrbc map [options]
 
-Usage: ptrbc map [options]
+	Usage: ptrbc map [options]
 
---input_dir     Input raw or dictionary data file directory
---dic           The dictionary file
---raw           The raw data file
---output_dir    Output mapped file directory( Stored in the input directory by default)
-
---help          Show this message
+		--input_dir     Input raw or dictionary data file directory
+		--dic           The dictionary file
+		--raw           The raw data file
+		--output_dir    Output mapped file directory( Stored in the input directory by default)
+		--help          Show this message
 
 ```
 ptrbc map --input_dir ./data/ --dic mapping_dictionary --raw revise_all_raw.xlsx --output_dir ./data
 ```
 2. ptrbc clean [options]
 
-Usage: ptrbc clean [options]
+	Usage: ptrbc clean [options]
 
---input_dir     Input mapped or cleaning-rules data file directory
---mapped        The mapped file
---rules The cleaning rules file
---output_dir    Output cleaned or suspect file directory( Stored in the input directory by default)
-
---help  Show this message
+	--input_dir     Input mapped or cleaning-rules data file directory
+	--mapped        The mapped file
+	--rules The cleaning rules file
+	--output_dir    Output cleaned or suspect file directory( Stored in the input directory by default)
+	--help  Show this message
 
 ```
 ptrbc clean --input_dir data/ --mapped revise_all_raw.xlsx_mapped --rules cleaning_rules --output_dir ./data
 ```
 3. ptrbc bp [options] 
 
-Usage: ptrbc bp [options]
+	Usage: ptrbc bp [options]
 
---input_file            Input the training data file with the whole dircctory
---pct                   The percent of the training data in the input data, default=0.9
---bp_size               Bp_size, default=12
---bp_matrix_size        Bp_matrix_size, default=100
---bp_decay              Bp_decay, default=0.01
---bp_range              Bp_range, default=0.1
---file_col              File_col
---bp_type               Bp_type: include class or predict, default=class
---output_pred           Output the bp predicted results, default=data/bp_pred_output.xlsx
---output_label          Output the bp predicted results, default=data/bp_label_output.xlsx
---help                  Show this message
+		--input_file            Input the training data file with the whole dircctory
+		--pct                   The percent of the training data in the input data, default=0.9
+		--bp_size               Bp_size, default=12
+		--bp_matrix_size        Bp_matrix_size, default=100
+		--bp_decay              Bp_decay, default=0.01
+		--bp_range              Bp_range, default=0.1
+		--file_col              File_col
+		--bp_type               Bp_type: include class or predict, default=class
+		--output_pred           Output the bp predicted results, default=data/bp_pred_output.xlsx
+		--output_label          Output the bp predicted results, default=data/bp_label_output.xlsx
+		--help                  Show this message
 
 ```
 ptrbc bp --input_train_file data/method_bp_sample.data --input_test_file data/method_bp_sample.data --bp_size 12 --bp_matrix_size 10 --bp_decay 5e-6  --bp_range 0.1 --file_col 40 --bp_type class --output_file data/BP_pred_result.out
 ```
 4. ptrbc rf [options]
 
-Usage: ptrbc rf [options]
+	Usage: ptrbc rf [options]
 
---input_file            Input the training data file with the whole dircctory
---pct                   The percent of the training data in the input data,
-                        default=0.9
---file_col              File_col
---rf_type               Predict type, default=response
---rf_step_size          RF step size, default=10
---rf_max_trees          The maximum of building trees, default=20
---output_pred           Output the RF predicted results,
-                        default=data/RF_pred_result.csv
---output_label          Output the RF predicted results,
-                        default=data/RF_label_result.csv
---help                  Show this message
+		--input_file            Input the training data file with the whole dircctory
+		--pct                   The percent of the training data in the input data, default=0.9
+		--file_col              File_col
+		--rf_type               Predict type, default=response
+		--rf_step_size          RF step size, default=10
+		--rf_max_trees          The maximum of building trees, default=20
+		--output_pred           Output the RF predicted results, default=data/RF_pred_result.csv
+		--output_label          Output the RF predicted results, default=data/RF_label_result.csv
+		--help                  Show this message
 
 ```
 ptrbc rf --input_file data/method_rf_sample.data --pct 0.9 --file_col 40 --rf_type response --rf_step_size 10 --rf_max_trees 20 --output_pred data/RF_pred_result.csv --output_label data/RF_label_result.csv
 ```
 5. ptrbc xgboost [options]
-Usage: ptrbc xgboost [options]
+	Usage: ptrbc xgboost [options]
 
---input_file            Input the training data file with the whole dircctory
---pct                   The percent of the training data in the input data,
-                        default=0.9
---file_col              File_col
---total_category        Total_category, default=20
---xgboost_nthread       XGBboost_nthread, default=2
---xgboost_nrounds       XGBboost_nrounds, default=100
---xgboost_subsample     XGBboost_subsample, default=0.5
---xgboost_objective     XGBboost_objective: include class or predict,
-                        default=multi:softmax
---output_pred           Output the XGBboost predicted results,
-                        default=data/xgboost_pred_result.csv
---output_label_numeric  Output the XGBboost numeric label,
-                        default=data/xgboost_label_numeric_result.csv
---output_label          Output the XGBboost predicted results,
-                        default=data/xgboost_label_result.csv
---help                  Show this message
+		--input_file            Input the training data file with the whole dircctory
+		--pct                   The percent of the training data in the input data, default=0.9
+		--file_col              File_col
+		--total_category        Total_category, default=20
+		--xgboost_nthread       XGBboost_nthread, default=2
+		--xgboost_nrounds       XGBboost_nrounds, default=100
+		--xgboost_subsample     XGBboost_subsample, default=0.5
+		--xgboost_objective     XGBboost_objective: include class or predict, default=multi:softmax
+		--output_pred           Output the XGBboost predicted results, default=data/xgboost_pred_result.csv
+		--output_label_numeric  Output the XGBboost numeric label, default=data/xgboost_label_numeric_result.csv
+		--output_label          Output the XGBboost predicted results, default=data/xgboost_label_result.csv
+		--help                  Show this message
 
 ```
 ptrbc xgboost --input_file data/method_xgboost_sample.data --pct 0.9 --file_col 40 --total_category 20 --xgboost_nthread 2 --xgboost_nrounds 100 --xgboost_subsample 0.5 --xgboost_objective multi:softmax --output_pred data/xgboost_pred_result.csv --output_label_numeric data/xgboost_label_numeric_result.csv --output_label data/xgboost_label_result.csv
 ``` 
 6. ptrbc svm [options]
 
-Usage: ptrbc svm [options]
+	Usage: ptrbc svm [options]
 
---input_file            Input the training data file with the whole dircctory
---pct                   The percent of the training data in the input data,
-                        default=0.9
---svm_type              Predict type, default=response
---output_pred           Output the SVM predicted results,
-                        default=data/SVM_pred_result.csv
---output_label          Output the SVM predicted results,
-                        default=data/SVM_label_result.csv
---help                  Show this message
+		--input_file            Input the training data file with the whole dircctory
+		--pct                   The percent of the training data in the input data, default=0.9
+		--svm_type              Predict type, default=response
+		--output_pred           Output the SVM predicted results, default=data/SVM_pred_result.csv
+		--output_label          Output the SVM predicted results, default=data/SVM_label_result.csv
+		--help                  Show this message
 
 ```
 ptrbc svm --input_file data/method_svm_sample.data --pct 0.9 --svm_type class --output_pred data/SVM_pred_result.csv --output_label data/SVM_pred_result.csv
 ```
 7. ptrbc knn [options]
-Usage: ptrbc knn [options]
+	Usage: ptrbc knn [options]
 
---input_file            Input the training data file with the whole dircctory
---pct                   The percent of the training data in the input data,
-                        default=0.9
---file_col              File_col
---knn_K                 The number of neighbours, default=10
---output_pred           Output the KNN predicted results,
-                        default=data/KNN_pred_result.csv
---output_label          Output the KNN predicted results,
-                        default=data/KNN_label_result.csv
---help                  Show this message
+		--input_file            Input the training data file with the whole dircctory
+		--pct                   The percent of the training data in the input data, default=0.9
+		--file_col              File_col
+		--knn_K                 The number of neighbours, default=10
+		--output_pred           Output the KNN predicted results, default=data/KNN_pred_result.csv
+		--output_label          Output the KNN predicted results, default=data/KNN_label_result.csv
+		--help                  Show this message
 
 ```
 ptrbc knn --input_file data/method_knn_sample.data --pct 0.9 --file_col 40 --knn_K 10 --output_pred data/KNN_pred_result.csv --output_label data/KNN_label_result.csv
