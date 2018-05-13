@@ -41,7 +41,7 @@ Examples
 		--help          Show this message
 
 ```
-	Example: ptrbc map --input_dir ./data/ --dic mapping_dictionary --raw revise_all_raw.xlsx --output_dir ./data
+Example: ptrbc map --input_dir ./data/ --dic mapping_dictionary --raw revise_all_raw.xlsx --output_dir ./data
 ```
 2. ptrbc clean [options]
 
@@ -54,7 +54,7 @@ Examples
 	--help  Show this message
 
 ```
-        Example: ptrbc clean --input_dir data/ --mapped revise_all_raw.xlsx_mapped --rules cleaning_rules --output_dir ./data
+Example: ptrbc clean --input_dir data/ --mapped revise_all_raw.xlsx_mapped --rules cleaning_rules --output_dir ./data
 ```
 3. ptrbc bp [options] 
 
@@ -73,7 +73,7 @@ Examples
 		--help                  Show this message
 
 ```
-        Example: ptrbc bp --input_train_file data/method_bp_sample.data --input_test_file data/method_bp_sample.data --bp_size 12 --bp_matrix_size 10 --bp_decay 5e-6  --bp_range 0.1 --file_col 40 --bp_type class --output_file data/BP_pred_result.out
+Example: ptrbc bp --input_train_file data/method_bp_sample.data --input_test_file data/method_bp_sample.data --bp_size 12 --bp_matrix_size 10 --bp_decay 5e-6  --bp_range 0.1 --file_col 40 --bp_type class --output_file data/BP_pred_result.out
 ```
 4. ptrbc rf [options]
 
@@ -90,7 +90,7 @@ Examples
 		--help                  Show this message
 
 ```
-        Example: ptrbc rf --input_file data/method_rf_sample.data --pct 0.9 --file_col 40 --rf_type response --rf_step_size 10 --rf_max_trees 20 --output_pred data/RF_pred_result.csv --output_label data/RF_label_result.csv
+Example: ptrbc rf --input_file data/method_rf_sample.data --pct 0.9 --file_col 40 --rf_type response --rf_step_size 10 --rf_max_trees 20 --output_pred data/RF_pred_result.csv --output_label data/RF_label_result.csv
 ```
 5. ptrbc xgboost [options]
 	Usage: ptrbc xgboost [options]
@@ -109,7 +109,7 @@ Examples
 		--help                  Show this message
 
 ```
-        Example: ptrbc xgboost --input_file data/method_xgboost_sample.data --pct 0.9 --file_col 40 --total_category 20 --xgboost_nthread 2 --xgboost_nrounds 100 --xgboost_subsample 0.5 --xgboost_objective multi:softmax --output_pred data/xgboost_pred_result.csv --output_label_numeric data/xgboost_label_numeric_result.csv --output_label data/xgboost_label_result.csv
+Example: ptrbc xgboost --input_file data/method_xgboost_sample.data --pct 0.9 --file_col 40 --total_category 20 --xgboost_nthread 2 --xgboost_nrounds 100 --xgboost_subsample 0.5 --xgboost_objective multi:softmax --output_pred data/xgboost_pred_result.csv --output_label_numeric data/xgboost_label_numeric_result.csv --output_label data/xgboost_label_result.csv
 ``` 
 6. ptrbc svm [options]
 
@@ -123,7 +123,7 @@ Examples
 		--help                  Show this message
 
 ```
-        Example: ptrbc svm --input_file data/method_svm_sample.data --pct 0.9 --svm_type class --output_pred data/SVM_pred_result.csv --output_label data/SVM_pred_result.csv
+Example: ptrbc svm --input_file data/method_svm_sample.data --pct 0.9 --svm_type class --output_pred data/SVM_pred_result.csv --output_label data/SVM_pred_result.csv
 ```
 7. ptrbc knn [options]
 	Usage: ptrbc knn [options]
@@ -137,7 +137,7 @@ Examples
 		--help                  Show this message
 
 ```
-        Example: ptrbc knn --input_file data/method_knn_sample.data --pct 0.9 --file_col 40 --knn_K 10 --output_pred data/KNN_pred_result.csv --output_label data/KNN_label_result.csv
+Example: ptrbc knn --input_file data/method_knn_sample.data --pct 0.9 --file_col 40 --knn_K 10 --output_pred data/KNN_pred_result.csv --output_label data/KNN_label_result.csv
 ```
 
 Support
