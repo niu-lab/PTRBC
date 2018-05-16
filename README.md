@@ -1,7 +1,7 @@
 PTRBC
 ===============
 
-This clinical data analysis tool can be used to do data cleaning and predict the required transfusion volume of red blood cells in surgical patients based on machine learning methods.
+This clinical data analysis tool can be used to do data cleaning and predict the required transfusion volume of red blood cells in surgical patients based on machine learning methods. Meanwhile, this tool can process the similar classification or regression problems. In other words, a general prediction model can be established for the input data specified.
 
 Usage
 -----
