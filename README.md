@@ -73,7 +73,7 @@ Example: ptrbc clean --input_dir data/ --mapped revise_all_raw.xlsx_mapped --rul
 		--help                       Show this message
 
 ```
-Example: ptrbc bp --input_train_file data/method_bp_sample.data --input_test_file data/method_bp_sample.data --bp_size 12 --bp_matrix_size 10 --bp_decay 5e-6  --bp_range 0.1 --file_col 40 --bp_type class --output_file data/BP_pred_result.out
+Example: ptrbc bp --input_file data/method_bp_sample.data --bp_size 12 --bp_matrix_size 10 --bp_decay 5e-6  --bp_range 0.1 --file_col 40 --bp_type class --output_pred data/bp_pred_output.xlsx --output_label data/bp_label_output.xlsx
 ```
 4. ptrbc rf [options]
 
