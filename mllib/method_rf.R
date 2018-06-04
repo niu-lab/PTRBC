@@ -73,6 +73,9 @@ while(TRUE){
 			
 }
 
+rf_model<-max_rf
+save(rf_model, file="models/RF.model")
+
 cat("\nOutput the optimal parameters of RF model:\n")
 cat("max_accuracy: ", accuracy, "max_ntree: ", max_nt, "\n")
 
