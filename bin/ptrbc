@@ -13,16 +13,17 @@ use Getopt::Long; # Getopt::Long - Extended processing of command line options
 #use Preprocess::Cleaning;
 #use ptrbc::Classification;
 #use ptrbc::Analysis;
-use Mapping;
-use Cleaning;
-use BP;
-use RF;
-use XGBoost;
-use SVM;
-use KNN;
+use lib::Mapping;
+use lib::Cleaning;
+use lib::BP;
+use lib::RF;
+use lib::XGBoost;
+use lib::SVM;
+use lib::KNN;
+use lib::PRED;
 
 my $subCmd = shift;
-my %cmds = map { ($_, 1) } qw/ map clean bp rf xgboost svm knn help/;
+my %cmds = map { ($_, 1) } qw/ map clean bp rf xgboost svm knn pred help/;
 unless (defined $subCmd) { die help_text();};
 unless (exists $cmds{$subCmd}){
 	warn 'Please give the valid sub command!', '\n';
@@ -36,6 +37,7 @@ SWITCH:{
 	$subCmd eq 'xgboost' && do { XGBoost->new();  last SWITCH; };
 	$subCmd eq 'svm' && do { SVM->new();  last SWITCH; };
 	$subCmd eq 'knn' && do { KNN->new();  last SWITCH; };
+	$subCmd eq 'pred' && do { PRED->new();  last SWITCH; };
 	#$subCmd eq 'classfy' && do { Classification->new(); last SWITCH; };
 	#$subCmd eq 'analysis'   && do { Analysis->new();  last SWITCH; };
 }
@@ -57,6 +59,7 @@ rf           -- Run RF method
 xgboost      -- Run XGBoost method
 svm          -- Run SVM method
 knn          -- Run KNN method
+pred         -- Predict the volume of RBCs using the trained models
 help         -- Show this message
 
 SUPPORT 
