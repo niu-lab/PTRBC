@@ -148,8 +148,9 @@ Usage: ptrbc pred [options]
                 --help                      Show this message
 
 ```
-ptrbc pred --model rf --input_file data/method_rf_sample.data --output_pred data/rf_predict_output.csv
+Example: ptrbc pred --model rf --input_file data/method_rf_sample.data --output_pred data/rf_predict_output.csv
 ```
+
 Support
 -------
 
