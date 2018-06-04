@@ -126,6 +126,7 @@ Example: ptrbc xgboost --input_file data/method_xgboost_sample.data --pct 0.9 --
 Example: ptrbc svm --input_file data/method_svm_sample.data --pct 0.9 --svm_type class --output_pred data/SVM_pred_result.csv --output_label data/SVM_pred_result.csv
 ```
 7. ptrbc knn [options]
+
 	Usage: ptrbc knn [options]
 
 		--input_file     <string>   Input the training data file with the whole dircctory
@@ -140,7 +141,8 @@ Example: ptrbc svm --input_file data/method_svm_sample.data --pct 0.9 --svm_type
 Example: ptrbc knn --input_file data/method_knn_sample.data --pct 0.9 --file_col 40 --knn_K 10 --output_pred data/KNN_pred_result.csv --output_label data/KNN_label_result.csv
 ```
 8. ptrbc pred [options]
-Usage: ptrbc pred [options]
+
+	Usage: ptrbc pred [options]
 
                 --model          <string>   Select model to predict, default model is rf, and optional models are: rf, svm, xgboost, bp and knn
                 --input_file     <string>   Input the testing data file with the whole dircctory
