@@ -144,10 +144,10 @@ Example: ptrbc knn --input_file data/method_knn_sample.data --pct 0.9 --file_col
 
 	Usage: ptrbc pred [options]
 
-                --model          <string>   Select model to predict, default model is rf, and optional models are: rf, svm, xgboost, bp and knn
-                --input_file     <string>   Input the testing data file with the whole dircctory
-                --output_pred    <string>   Output the RF predicted results, default=data/rf_predict_output.csv
-                --help                      Show this message
+		--model          <string>   Select model to predict, default model is rf, and optional models are: rf, svm, xgboost, bp and knn
+		--input_file     <string>   Input the testing data file with the whole dircctory
+		--output_pred    <string>   Output the RF predicted results, default=data/rf_predict_output.csv
+		--help                      Show this message
 
 ```
 Example: ptrbc pred --model rf --input_file data/method_rf_sample.data --output_pred data/rf_predict_output.csv
